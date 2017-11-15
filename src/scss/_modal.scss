@@ -1,0 +1,70 @@
+.modal{
+  background-color: rgba(0,0,0,.5);
+  display: block;
+  opacity: 1;
+  height: 100%;
+
+  .close{
+    z-index: 2;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+  .modal-dialog{
+    opacity: 0;
+    @include transition(opacity 1s ease);
+
+    //height: 380px;
+    //overflow: scroll;
+  }
+  .fa-spinner{
+    margin: 10px 10px;
+  }
+
+  @include transition(opacity .4s ease);
+  &.in{
+    @include transition(opacity .4s ease);
+    .modal-dialog{
+      opacity: 1;
+    }
+  }
+  .modal-body{
+    padding: 0px;
+  }
+  .modal-content{
+    border-radius: 0px;
+    padding: 20px;
+  }
+
+
+
+}
+
+.warning-modal{
+  .modal-content{
+    background-color: $red;
+    color:white;
+    padding-bottom: 15px;
+    h2:first-of-type{
+      margin-top: 0px;
+    }
+    h3:first-of-type{
+      margin-bottom: 20px;
+    }
+    h2,h3{
+      text-align: center;
+    }
+  }
+  .modal-body{
+    padding: 20px;
+  }
+    .close{
+      color:white;
+    }
+
+}
+
+.btn-white{
+  background-color: white;
+  color: black;
+}

@@ -1,0 +1,270 @@
+@import 'settings';
+@import 'modal';
+@import 'systemMessage.scss';
+body{
+  background-color: #f2efea;
+}
+#App{
+  padding-top: 15px;
+}
+.Agenda{
+  h2:first-of-type{
+    margin-top: 0px;
+  }
+}
+.Header{
+  margin-bottom: 20px;
+}
+ul#Agenda {
+
+  .btn-danger,.btn-warning,.btn-success{
+    background-color:transparent;
+    border:none;
+    @include transition(all .8s ease);
+  }
+  .btn-danger{
+    color: $red;
+    &:hover{
+      background-color: $red;
+      color:white;
+    }
+  }
+  .btn-warning{
+    color: $yellow;
+    &:hover{
+      background-color: $yellow;
+      color:white;
+    }
+  }
+  .btn-success{
+    color: $green;
+    &:hover{
+      background-color: $green;
+      color:white;
+    }
+  }
+
+  padding-left: 0px;
+  & > li{
+    @include transition(all .8s ease);
+    background-color:transparent;
+    list-style-type: none ;
+    border:solid thin gray;
+    border-bottom: none;
+    padding: 10px 10px;
+    //&:after {
+    //  content: " "; /* Older browser do not support empty content */
+    //  visibility: hidden;
+    //  display: block;
+    //  height: 0;
+    //  clear: both;
+    //}
+    h2,h3,h4{
+      margin: 5px 0px;
+    }
+    h3:first-of-type{
+      margin-top: 5px;
+    }
+
+    p{
+      margin-bottom: 0px;
+    }
+    &:last-child{
+      border-bottom: solid thin gray;
+    }
+    &.active{
+      background-color:white;
+    }
+    div{
+        &.slide-enter{
+          max-height:0px;
+          overflow: hidden;
+        }
+        &.slide-enter-active{
+          max-height: 9999px;
+          transition: .5s ease-in all;
+        }
+
+        &.slide-leave{
+          max-height: 300px;
+          //background-color: green;
+          transition: .3s ease-in all;
+
+        }
+
+        &.slide-leave-active{
+          max-height:0px;
+          overflow: hidden;
+          //background-color: blue;
+        }
+
+    }
+
+  }
+
+}
+
+
+ul#Agenda ul.timelist{
+  padding-left: 0px;
+  margin-top: 10px;
+  //max-height: 0px;
+  //overflow: hidden;
+  //@include transition(all .8s ease);
+  //&.active{
+  //  max-height: 1000px;
+  //}
+
+
+  li{
+    padding: 4px 0px;
+    border: none;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    &.fade-enter{
+      padding-left: 100px;
+      opacity: .3;
+    }
+    &.fade-enter-active{
+      padding-left: 0px;
+      opacity: 1px;
+      transition: .5s ease-in all;
+    }
+
+    &.fade-leave{
+      padding-left: 0px;
+      opacity: 1;
+    }
+
+    &.fade-leave-active{
+      padding-left: 200px;
+      opacity: 0;
+      transition: .5s ease-in all;
+    }
+
+    & > span{
+      font-size: 10px;
+      &.col1{
+        flex: 0;
+        padding-right: 10px;
+        min-width: 60px;
+        text-align: right;
+      }
+      &.col2{
+        flex: 4
+      }
+      h4{
+        padding: 0px;
+        margin: 0px;
+        font-size: 12px;
+      }
+    }
+
+    &.header{
+      h4{
+        //font-size: 15px;
+        font-weight: bold;
+
+      }
+
+    }
+
+    &.indent{
+      //border-left: solid 5px #e7e7e7;
+      padding-left: 50px;
+    }
+
+  }
+}
+
+
+span.red{
+  color:$red;
+  font-weight: bold;
+}
+
+.EditSection,.AddChildSection, .AddSection, .Login{
+  hr{
+    border-color:gray;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+    .text-help{
+      color: $red;
+      font-weight: bold;
+    }
+  }
+  .label{
+    font-size: 11px;
+  }
+  textarea.form-control{
+    height: 130px;
+  }
+  .form-control{
+    //height: 24px;
+    padding: 6px 6px;
+    font-size: 12px;
+  }
+
+  .rw-widget-input, .rw-filter-input {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+
+.controls {
+  button{
+    margin-right: 2px;
+    padding: 1px 4px;
+    font-size: 10px;
+    line-height: 1.5;
+    border-radius: 0px;
+  }
+}
+.btn-xs{
+  margin-right: 2px;
+  padding: 1px 4px;
+  font-size: 10px;
+  line-height: 1.5;
+  border-radius: 0px;
+}
+
+.click{
+  cursor: pointer;
+  border-bottom: 1px solid black;
+  background-color:white;
+  padding: 2px 4px;
+  padding-left: 0px;
+  @include transition(all .8s ease);
+  &:hover{
+    color: rgb(51, 78, 183);
+  }
+}
+
+
+span.small-caps{
+  font-size: 10px;
+}
+
+
+
+.btn-gray, .btn-gray:hover {
+  color: #9d9d9d;
+  background-color: #eeeeee;
+  border-color: #ccc;
+
+}
+
+.btn-default.btn-no-hover{
+  &:hover{
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+  }
+}
+
+.red{
+  color: $red;
+}
